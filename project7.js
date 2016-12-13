@@ -1,3 +1,4 @@
+//jordan z's code
 var screen = document.getElementById("screen")
 var namespace = "http://www.w3.org/2000/svg"
 
@@ -10,7 +11,7 @@ function transformPoint(event) {
   return mousept
 }
 
-// Step 2: drawSquare and drawCircle functions
+// Step 2: drawSquare and drawCircle functions code by jordan z
 
 function drawSquare(x, y, size, color) {
   var newcircle = document.createElementNS(namespace,"rect");
@@ -28,10 +29,10 @@ function drawSquare(x, y, size, color) {
   newcircle.setAttribute("y", y);
   newcircle.setAttribute("r",radius);
   newcircle.setAttribute("fill",color);
-  canvas.appendChild(newcircle);
+  screen.appendChild(newcircle);
     }
 
-// Step 3: Event listeners
+// Step 3: Event listeners code by jordan z
 document.addEventListener("mousemove", function(e) {
 var pt = transformPoint(e)
 
@@ -39,9 +40,6 @@ var selectShape = document.getElementById("shapeSelect").value
 var selectColor = document.getElementById("colorSelect").value
 var selectSize = document.getElementById("sizeSelect").value
 
-console.log(selectShape)
-console.log(selectColor)
-console.log(selectSize)
 
 if (selectShape == "square"){
   drawSquare(pt.x, pt.y, selectSize, selectColor)
@@ -52,3 +50,44 @@ else if (selectShape == "circle"){
 }
 
 })
+//made by Jordan Z
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//jordan z's code watermark
+
+
+
+
+
+
+
+
+
+
+
+
+
+//code by Jordan Z period 4
