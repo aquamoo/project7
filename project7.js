@@ -25,8 +25,8 @@ function drawSquare(x, y, size, color) {
 
   function drawCircle(x, y, radius, color) {
     var newcircle = document.createElementNS(namespace,"circle");
-  newcircle.setAttribute("x", x);
-  newcircle.setAttribute("y", y);
+  newcircle.setAttribute("cx", x);
+  newcircle.setAttribute("cy", y);
   newcircle.setAttribute("r",radius);
   newcircle.setAttribute("fill",color);
   screen.appendChild(newcircle);
