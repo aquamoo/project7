@@ -1,8 +1,9 @@
 //jordan z's code
 var screen = document.getElementById("screen")
 var namespace = "http://www.w3.org/2000/svg"
+var drawing = false;
 
-// utility function
+// utility function code by jordan z
 function transformPoint(event) {
   var pt = screen.createSVGPoint()
   pt.x = event.x
@@ -11,7 +12,7 @@ function transformPoint(event) {
   return mousept
 }
 
-// Step 2: drawSquare and drawCircle functions code by jordan z
+//code by Jordan Z Step 2: drawSquare and drawCircle functions code by jordan z
 
 function drawSquare(x, y, size, color) {
   var newcircle = document.createElementNS(namespace,"rect");
@@ -33,13 +34,23 @@ function drawSquare(x, y, size, color) {
     }
 
 // Step 3: Event listeners code by jordan z
+
+document.addEventListener("mousedown", function(e) {
+  drawing = true;
+})
+
+document.addEventListener("mouseup", function(e) {
+drawing = false;
+})
+
 document.addEventListener("mousemove", function(e) {
 var pt = transformPoint(e)
 
 var selectShape = document.getElementById("shapeSelect").value
-var selectColor = document.getElementById("colorSelect").value
+var selectColor = document.getElementById("colorSelect").value  //JORDAN Z'S CODE
 var selectSize = document.getElementById("sizeSelect").value
 
+if (drawing == true) {
 
 if (selectShape == "square"){
   drawSquare(pt.x, pt.y, selectSize, selectColor)
@@ -47,6 +58,8 @@ if (selectShape == "square"){
 
 else if (selectShape == "circle"){
   drawCircle(pt.x, pt.y, selectSize, selectColor)
+}
+
 }
 
 })
